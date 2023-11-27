@@ -2,14 +2,13 @@ package com.example.pp312.dao;
 
 import com.example.pp312.model.User;
 import org.springframework.stereotype.Component;
-//import web.model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Component
-public class UserDaoImpl implements UserDao{
+public class UserDaoImpl implements UserDao {
     @PersistenceContext
     private EntityManager em;
 

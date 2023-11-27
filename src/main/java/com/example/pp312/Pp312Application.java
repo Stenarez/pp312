@@ -8,7 +8,7 @@ public class Pp312Application {
 
     public static void main(String[] args) {
 //        System.out.println("voblya");
-      SpringApplication.run(Pp312Application.class, args);
+        SpringApplication.run(Pp312Application.class, args);
     }
 
 }

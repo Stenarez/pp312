@@ -5,8 +5,7 @@ import com.example.pp312.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-//import web.model.User;
-//import web.service.UserService;
+
 
 @Controller
 @RequestMapping("/user")
@@ -20,15 +19,17 @@ public class UserController {
     }
 
     @GetMapping()
-    public String usr(Model model){
+    public String vseUser(Model model) {
         model.addAttribute("user", userService.listUsers());
         return "user";
     }
+
     @GetMapping("/new")
-    public String newPerson(Model model){
+    public String newPerson(Model model) {
         model.addAttribute("user", new User());
         return "new";
     }
+
     @PostMapping()
     public String create(@ModelAttribute("user") User user) {
         userService.addUser(user);
@@ -40,6 +41,7 @@ public class UserController {
         userService.delUser(id);
         return "redirect:/user";
     }
+
     @GetMapping("/{id}/edit")
     public String onePerson(@ModelAttribute("id") int id, Model model) {
         model.addAttribute("user", userService.findUser(id));
