@@ -20,7 +20,7 @@ public class UserController {
 
     @GetMapping()
     public String vseUser(Model model) {
-        model.addAttribute("user", userService.listUsers());
+        model.addAttribute("user", userService.getListUsers());
         return "user";
     }
 
@@ -38,7 +38,7 @@ public class UserController {
 
     @DeleteMapping("/{id}")
     public String deleteUser(@ModelAttribute("id") int id) {
-        userService.delUser(id);
+        userService.deleteUser(id);
         return "redirect:/user";
     }
 
@@ -50,7 +50,7 @@ public class UserController {
 
     @PatchMapping("/{id}")
     public String update(@ModelAttribute("user") User user) {
-        userService.updUser(user);
+        userService.updateUser(user);
         return "redirect:/user";
     }
 }
